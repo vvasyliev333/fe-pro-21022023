@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        //Завдання №3 
+
+        // прямокутник
+        for (let i = 0; i < 10; i++){
+            for(j = 0; j < 10; j++){
+                document.write("* ")
+            }
+        document.write("<br/>");
+        }
+        //прямокутний трикутник
+        var n = "&nbsp";
+        for (let i = 0; i < 10; i++){
+            for(j = (10-i); j <= 10; j++){
+                document.write("*", n, n)
+            }
+        document.write("<br/>");
+        }
+        //рівносторонній трикутник
+        var n = "&nbsp";
+        for (let i = 0; i < 10; i++) {
+        for (let k = 10; k > i+1; k--) {
+        document.write(n,n)
+        }
+        for (let j = 0; j < i + 1; j++) {
+        document.write("*", n, n)
+        }
+        document.write("<br>")
+        }
+        //ромб
+        var n = "&nbsp";
+        for (let i = 0; i < 10; i++) {
+        for (let k = 10; k > i+1; k--) {
+        document.write(n,n)
+        }
+        for (let j = 0; j < i + 1; j++) {
+        document.write("*", n, n)
+        }
+        document.write("<br>")
+        }
+        var n = "&nbsp";
+        for (let i = 1; i < 10; i++) {
+        for (let k = 10; k > 10-i; k--) {
+        document.write(n,n)
+        }
+        for (let j = 0+i; j < 10; j++) {
+        document.write("*", n, n)
+        }
+        document.write("<br>")
+        }
+
+        //Завдання №1 
+        /*let a = +prompt("Введіть число");
+        let b = +prompt("Введіть число");
+
+        const rez = a+b < 4 ? "Мало":"Багато";
+
+        document.write(rez)*/
+
+        //Завдання №2
+
+        /*let login = prompt("Введіть логін:")
+
+        const message1 = login == "Вася" ? "Привет":"";
+        const message2 = login == "Директор" ? "Здравствуйте":"";
+        const message3 = login == "" ? "Нет логина":"";
+
+        document.write(message1, message2, message3)*/
+
+        //Завдання №3
+        /*var x = +prompt("Введіть число","");
+        var y = +prompt("Введіть число","");
+        var sum = 0;
+    
+        while (x<y)
+        {
+          x++;
+          if (x % 2 == 1){
+            document.write(x,"<br/>");
+            }
+          
+          if(x<y) 
+            {
+              sum+=x;
+            }
+        }    
+        document.write(sum);*/
+
+        //Факторіал 
+
+        let counter = Number(prompt("Введіть число"));
+        let factorial = 1;
+
+        document.write("Факторіал числа: ", + counter + "! = ")
+
+        while(counter>0){
+
+            factorial = factorial * counter;
+            counter = counter - 1;
+        }
+        document.write(factorial)
+    </script>
+</body>
+</html>
