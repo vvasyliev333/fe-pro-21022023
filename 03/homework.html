@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /* Створіть масив styles з елементами «Джаз» та «Блюз».
+        Додайте "Рок-н-рол" в кінець.
+        Замініть значення всередині на «Класика». Ваш код для пошуку значення всередині повинен працювати для масивів з будь-якою довжиною.
+        Видаліть перший елемент масиву та покажіть його.
+        Вставте «Реп» та «Реггі» на початок масиву.<br>*/
+
+        var stack = ["Джаз", "Блюз"];
+        document.write("<p>Вихідний: " + stack.join(" "));
+
+        document.write("<hr/>");
+
+        var lenght = stack.push("Рок-н-ролл");
+        document.write("<p>Після додавання: " + stack.join(" "));
+
+        document.write("<hr/>");
+        
+        stack[Math.floor((stack.length - 1) / 2)] = "Класика";
+        document.write("<p>Після додавання: " + stack.join(" "));
+
+        document.write("<hr/>");
+
+        var lenght = stack.shift();
+        document.write("<p>Елемент що лишився: " + lenght);
+        document.write("<p>Після додавання: " + stack.join(" "));
+        
+        document.write("<hr/>");
+        var lenght = stack.unshift("Реп", "Реггі");
+        document.write("<p>Після додавання: " + stack.join(" "));
+    </script>
+</body>
+</html>

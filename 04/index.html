@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display{
+            width: 100px;
+            padding: .5rem 0;
+            font-size: 1.2rem;
+            color: black;
+            background: green;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="display"></div>
+    <script>
+    const add = (a,b) => {
+        return a+b;
+    }
+    const sub = (a,b) => {
+        return a-b;
+    }
+    const mul = (a,b) => {
+        return a*b;
+    }
+    const div = (a,b) => {
+        if (b === 0) {
+            console.error("Error");
+            return;}
+        return a/b;
+    }
+
+    function calculate (num1, num2, callback, show){
+        show(callback (num1, num2));
+    }
+
+    const op1 = parseFloat(prompt("value 1")), 
+    op2 = parseFloat(prompt("value 2")), 
+    sign = prompt("sign");
+
+    function show(data) {
+        document.getElementById("display").innerHTML = data
+    }
+
+    switch(sign){
+        case "+" : calculate (op1, op2, add, show)
+        break;
+        case "-" : calculate (op1, op2, sub, show)
+        break;
+        case "*" : calculate (op1, op2, mul, show)
+        break;
+        case "/" : calculate (op1, op2, div, show)
+        break;
+    }
+    </script>
+</body>
+</html>
