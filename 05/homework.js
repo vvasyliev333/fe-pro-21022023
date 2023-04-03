@@ -32,11 +32,10 @@ const curr_data = {
     ]
 }
 
-function show (exchange_data){
+function show (curr_data){
     document.write (`<header><div class = header_block><div class = "header_block_1"><div>${curr_data.date}</div><div>${curr_data.time}</div></div><div class = header_block_2><div>Курси обміну валют</div><div>Exchange rates</div></div></div class = header_block></header><table><th></th><th>Країна</th><th class="center">Валюта</th><th class="col_name">We buy at</th><th class="col_name">We sell at</th></tr>`)
-    exchange_data.exchangeRate.forEach(element =>
+    curr_data.exchangeRate.forEach(element =>
         document.write (`<tr><td class="center"><div class="image" style="background-position: ${element.flag};"></div></td><td class="col_name">${element.country}</td><td class="center_text">${element.currency}</td><td class="yellow">${element.purchaseRateNB.toFixed(2)}</td><td class="yellow">${element.saleRateNB.toFixed(2)}</td></tr>`))
-        document.write (`</table>`)
 }
 
 show(curr_data);

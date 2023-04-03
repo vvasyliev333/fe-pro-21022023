@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const infoCoin = prompt("Оберать монету", "bitcoin, ethereum, stellar");
+
+const wallet = {
+    userName : "Petro",
+    bitcoin : {
+        coinName : "Bitcoin",
+        coinLogo : "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+        coinQuantity: 3.5345,
+        contExchange : 26673.74
+    },
+    ethereum : {
+        coinName : "Ethereum",
+        coinLogo : "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+        coinQuantity: 4.34,
+        contExchange : 1730.31
+    },
+
+    stellar : {
+        coinName : "Stellar",
+        coinLogo : "https://s2.coinmarketcap.com/static/img/coins/64x64/512.png",
+        coinQuantity: 234,
+        contExchange : 0.08629
+    },
+    show : function (infoCoin) {
+        return `Доброго дня, ${this.userName} ! На вашому балансі ${this[infoCoin].coinName}  <img src="${this[infoCoin].coinLogo}" alt="${this[infoCoin].coinName}"> залишилося ${this[infoCoin].coinQuantity} монет, якщо ви сьогодні продасте їх те, отримаєте ${(this[infoCoin].coinQuantity * this[infoCoin].contExchange * 38).toFixed(2)} грн.`
+    }
+}
+
+document.write("<br>" + wallet.show(infoCoin))
+    </script>
+</body>
+</html>
