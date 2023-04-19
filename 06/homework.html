@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*
+HW 
+(Клас - конструктор)
+
+Створити клас Animal та розширюючі його класи Dog, Cat, Horse.
+Клас Animal містить змінні food, location і методи makeNoise, eat, sleep. Метод makeNoise, наприклад, може виводити на консоль "Така тварина спить".
+Dog, Cat, Horse перевизначають методи makeNoise, eat.
+Додайте змінні до класів Dog, Cat, Horse, що характеризують лише цих тварин.
+Створіть клас Ветеринар, у якому визначте метод void (Нічого не повертає) treatAnimal(Animal animal). Нехай цей метод роздруковує food і location тварини, що прийшла на прийом.
+У методі main створіть масив типу Animal, в який запишіть тварин всіх типів, що є у вас. У циклі надсилайте їх на прийом до ветеринара.
+*/
+        function Animal(typeAnimal, food, location){
+            this.typeAnimal = typeAnimal;
+            this.food = food;
+            this.location = location; 
+        }
+
+        Animal.prototype.makeNoise = function (){
+            console.log("Making noise is the feature of animals")
+        }
+
+        Animal.prototype.eat = function (){
+            console.log("Eating is the favorite deal of any animal")
+        }
+
+        Animal.prototype.sleep = function (){
+            console.log("Sleeping is the true biological behaviour")
+        }
+
+    /*конструктор dog*/
+
+    function Dog (typeAnimal, food, location, skills){
+        this.typeAnimal = typeAnimal;
+        this.food = food;
+        this.location = location;
+        this.skills = skills; 
+    }
+
+    Dog.prototype = new Animal();
+    Dog.prototype.makeNoise = function () { console.log(`This is the dogs' feature`) };
+    Dog.prototype.eat = function () { console.log(`This is the dogs' favourite deal`) };
+    Dog.prototype.bark = function () { console.log(`only dogs have this skills`) };
+
+    /*конструктор cat*/
+    function Cat (typeAnimal, food, location, sense){
+        this.typeAnimal = typeAnimal;
+        this.food = food;
+        this.location = location;
+        this.sense = sense; 
+    }
+
+    Cat.prototype = new Animal();
+    Cat.prototype.makeNoise = function () { console.log(`This is the cats' feature`) };
+    Cat.prototype.eat = function () { console.log(`This is the cats' favourite deal`) };
+    Cat.prototype.sense = function () { console.log(`only cats have this sense of smell`) };
+
+    /*конструктор horse*/
+    function Horse (typeAnimal, food, location, ride){
+        this.typeAnimal = typeAnimal;
+        this.food = food;
+        this.location = location;
+        this.ride = ride; 
+    }
+
+    Horse.prototype = new Animal();
+    Horse.prototype.makeNoise = function () { console.log(`This is the horses' feature`) };
+    Horse.prototype.eat = function () { console.log(`This is the horses' favourite deal`) };
+    Horse.prototype.ride = function () { console.log(`only horses can backing`) };
+
+    const cat = new Cat("Cat", "fish", "home", "50 metres");
+    const dog = new Dog("Dog", "meet", "booth", "look for missilles");
+    const horse = new Horse("Horse", "grass", "outdoor", "gallop")
+
+
+    /*конструктор ветеринар*/
+
+    function Veterinar (){};
+    Veterinar.prototype.void = function (){};
+    Veterinar.prototype.treatAnimal = function (animal){
+        return (`case: ${animal.typeAnimal}, food: ${animal.food}, location ${animal.location}`)
+    }
+
+
+    /*метод main*/
+
+    function main() {
+    const animalArray = [cat, dog, horse];
+    animalArray.forEach(element =>
+        document.write(`${element.typeAnimal} is at the veterinars' office. <br> ${hospital.treatAnimal(element)}. <br>`))
+}
+const hospital = new Veterinar();
+main()
+
+    </script>
+</body>
+</html>

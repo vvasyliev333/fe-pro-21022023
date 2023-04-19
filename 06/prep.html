@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*Задача для підготовки №1 
+Реалізуйте клас Worker (Працівник), який матиме такі властивості: name (ім'я), surname (прізвище),
+rate (ставка за день роботи), days (кількість відпрацьованих днів).
+Також клас повинен мати метод getSalary(), який виводитиме зарплату працівника.
+Зарплата - це добуток (множення) ставки rate на кількість відпрацьованих днів days.*/
+
+// var name = prompt("Введіть ім'я");
+// var surname = prompt("Введіть прізвище");
+// var rate = prompt("Введіть ставку");
+// var days = prompt("Введіть кількість днів");
+
+
+// function Worker (name, surname, rate, days){
+//     this.name = name;
+//     this.surname = surname;
+//     this.rate = rate;
+//     this.days = days
+//     }
+
+// Worker.prototype.getSalary = function(salary){
+// }
+// document.write(`Зарплата працівника ${rate*days}`)
+
+/*Задача для підготовки №2 
+Реалізуйте клас MyString, який матиме такі методи: метод reverse(),
+який параметром приймає рядок, а повертає її в перевернутому вигляді, метод ucFirst(),
+який параметром приймає рядок, а повертає цей же рядок, зробивши його першу літеру великою
+та метод ucWords, який приймає рядок та робить заголовною першу літеру кожного слова цього рядка.*/
+
+function MyString(text){
+    this.text = text;
+}
+
+MyString.prototype.reverse = function () {
+    let info = this.text.split('').reverse().join('');
+    return info;
+}
+
+MyString.prototype.ucFirst = function () {
+    return this.text.slice(0,1).toUpperCase() + this.text.slice(1);
+}
+
+MyString.prototype.ucWords = function () {
+    let info = this.text.split('').map(function(element){
+        return element.slice(0,1).toUpperCase() + element.slice(1);
+    }).join(` `);
+    return info;
+    }
+
+const newString = new MyString (`java script is the best`);
+
+
+document.write(`${newString.reverse()}`);
+
+document.write(`<br>${newString.ucFirst()}`);
+
+document.write(`<br>${newString.ucWords()}`);
+    </script>
+</body>
+</html>
