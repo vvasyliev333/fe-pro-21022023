@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*Створити клас Car , Engine та Driver.
+Клас Driver містить поля - ПІБ, стаж водіння.
+Клас Engine містить поля – потужність, виробник.
+Клас Car містить поля – марка автомобіля, клас автомобіля, вага, водій типу Driver, мотор типу Engine. Методи start(), stop(), turnRight(), turnLeft(), які виводять на друк: "Поїхали", "Зупиняємося", "Поворот праворуч" або "Поворот ліворуч". А також метод toString(), який виводить повну інформацію про автомобіль, її водія і двигуна.
+
+Створити похідний від Car клас - Lorry (вантажівка), що характеризується також вантажопідйомністю кузова.
+Створити похідний від Car клас - SportCar, який також характеризується граничною швидкістю.*/
+
+//клас Водій 
+class Driver {
+    constructor (fullName, driveExperience){
+        this.fullName = fullName,
+        this.drive_experience = driveExperience
+    }
+}
+// клас Двигун 
+class Engine{
+    constructor (power, producer){
+        this.power = power,
+        this.producer = producer
+    }
+}
+// клас Авто 
+class Car{
+    constructor(modelOfAuto, classOfAuto, weightOfAuto, driver, engine){
+        this.modelOfAuto = modelOfAuto,
+        this.classOfAuto = classOfAuto,
+        this.weightOfAuto = weightOfAuto,
+        this.driver = driver,
+        this.engine = engine
+    }
+    start(){
+        document.write("Поїхали")
+    };
+    stop(){
+        console.log("Зупиняємося")
+    };
+    turnRight(){
+        console.log("Поворот праворуч")
+    };
+    turnLeft(){
+        console.log("Поворот ліворуч")
+    }
+    toString(){
+        console.log(`
+            Автомобіль: ${this.modelOfAuto},
+            Водій: повне ім'я ${this.driver.fullName}, стаж ${this.driver.driveExperience},
+            Двигун: потужність ${this.engine.power}, виробник ${this.engine.producer}
+        `)
+    }
+}
+
+class Lorry extends Car{
+    constructor (modelOfAuto, classOfAuto, weightOfAuto, driver, engine, carCarryingCapacity){
+        super(modelOfAuto, classOfAuto, weightOfAuto, driver, engine)
+        this.carCarryingCapacity = carCarryingCapacity
+    }
+    toString(){
+        console.log(`
+            Автомобіль: ${this.modelOfAuto},
+            Водій: повне ім'я ${this.driver.fullName}, стаж ${this.driver.driveExperience},
+            Двигун: потужність ${this.engine.power}, виробник ${this.engine.producer},
+            Вантажопідйомність: ${this.carCarryingCapacity} кг;
+        `)
+    }
+}
+
+class SportCar extends Car{
+    constructor (modelOfAuto, classOfAuto, weightOfAuto, driver, engine, maxSpeed){
+        super(modelOfAuto, classOfAuto, weightOfAuto, driver, engine)
+        this.maxSpeed = maxSpeed
+    }
+    toString(){
+        console.log(`
+            Автомобіль: ${this.modelOfAuto},
+            Водій: повне ім'я ${this.driver.fullName}, стаж ${this.driver.driveExperience},
+            Двигун: потужність ${this.engine.power}, виробник ${this.engine.producer},
+            Максимальна швидкість: ${this.maxSpeed} км.год;
+        `)
+    }
+}
+
+// прототип класу Водій
+
+const mercedesDriver = new Driver ("Пилипів Олександр Юрійович", 28);
+const manDriver = new Driver ("Коваленко Юрій Борисович", 40);
+const ferrariDriver = new Driver ("Ніконов Михайло Анатолійович", 35)
+
+//прототип класу Двигун 
+
+const mercedesEngine = new Engine (585, "Mercedes-Benz");
+const manEngine = new Engine (400, "Man");
+const ferrariEngine = new Engine (700, "Ferrari")
+
+//прототип класу Car 
+
+const firstCar = new Car("G63AMG", "light", 2200, mercedesDriver, mercedesEngine);
+
+//прототип класу Lorry
+
+const heavyCar = new Lorry("TGS", "heavy", 9000, manDriver, manEngine, 15000)
+
+//прототип класу SportCar
+
+const fastCar = new SportCar ("488", "light", 1000, ferrariDriver, ferrariEngine, 330)
+
+console.log(ferrariDriver);
+console.log(ferrariEngine);
+firstCar.toString();
+heavyCar.toString();
+fastCar.toString()
+
+</script>
+</body>
+</html>
