@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Homework</title>
+
+    <style>
+        .screen{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            width: 100%; 
+            height: 30px;
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+// function appendBody(tag) {
+//     document.body.append(tag);
+//   }
+  
+//   function inputAdd(amount) {
+//     for (let i = 0; i < amount; i++) {
+//       const input = document.createElement("input");
+//       input.classList.add("input");
+//       appendBody(input);
+//     }
+//   }
+//   inputAdd(2);
+  
+//   const changeBtn = document.createElement("button");
+//   changeBtn.innerText = "change-exchange";
+//   changeBtn.onclick = function () { changeExchange(); };
+//   appendBody(changeBtn);
+  
+//   function changeExchange() {
+//     const [...arr] = document.getElementsByClassName("input");
+//     if (!arr[0].value || !arr[1].value) { return alert("Необхідно заповнити обидва поля"); }
+//     arr[2] = arr[0].value;
+//     arr[0].value = arr[1].value;
+//     arr[1].value = arr[2];
+//   }
+
+  /*Створіть 5 див на сторінці потім використовуючи getElementsByTagName і forEath поміняйте дивам колір тла.*/
+
+//   function divCreated (quantity) {
+//     for (let i = 0; i < quantity; i++){
+//         const div = document.createElement("div");
+//         document.body.append(div);
+//     }
+//   }
+
+//     function divColorChange (){
+//         const [...div] = document.getElementsByTagName("div");
+//         div.forEach (elem => elem.style.backgroundColor = "orange");
+//     }
+
+//     divCreated(5);
+//     divColorChange();
+
+    /*Створіть багаторядкове поле для введення тексту та кнопки. Після натискання кнопки користувачем програма повинна
+    згенерувати тег div з текстом, який був у багаторядковому полі. багаторядкове поле слід очистити після
+    переміщення інформації*/
+
+    // const input = document.createElement("input");
+    // const btn = document.createElement("btn");
+    // btn.innerText = "Введіть інформацію";
+    // btn.onclick = function () {genDiv()};
+    // document.body.append(input);
+    // document.body.append(btn);
+
+    // function genDiv(){
+    //     if (!input.value)
+    //     { return alert("Необхідно заповнити поле");}
+    //     const Div = document.createElement ("div");
+    //     const field = btn.nextElementSibling;
+    //     const parentNode = btn.parentNode;
+    //     parentNode.insertBefore(Div, field);
+    //     Div.innerText = input.value;
+    //     input.value = '';
+    // }
+
+    // Створіть картинку та кнопку з назвою "Змінити картинку" зробіть так щоб при завантаженні сторінки була картинка https://itproger.com/img/courses/1476977240.jpg
+    // При натисканні на кнопку вперше картинка замінилася на https://itproger.com/img/courses/1476977488.jpg
+    // при другому натисканні щоб картинка замінилася на https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png
+
+//     const Pic = document.createElement("img");
+//     Pic.setAttribute('src', 'https://itproger.com/img/courses/1476977240.jpg');
+//     const Btn = document.createElement("btn");
+//     Btn.innerText = "Змінити картинку";
+//     Btn.onclick = function () { PicChange(); };
+//     document.body.append(Pic);
+//     document.body.append(Btn);
+
+//     function PicChange (){
+//     if ((Pic.getAttribute('src').toString()) == "https://itproger.com/img/courses/1476977240.jpg") {
+//     Pic.setAttribute('src', 'https://itproger.com/img/courses/1476977488.jpg');
+//   } else {
+//     Pic.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png');
+//   }
+//     }
+
+    /*Створює на сторінці 10 парахрафів і зробіть так, щоб при натисканні на параграф він зникав*/
+
+    function pCreated (quantity) {
+    for (let i = 0; i < quantity; i++){
+        const p = document.createElement("p");
+        document.body.append(p);
+        p.onclick = function (){
+            p.remove()
+        }
+    }
+    }
+    
+    pCreated(10);
+    </script>
+</body>
+
+</html>
