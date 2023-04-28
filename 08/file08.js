@@ -1,4 +1,4 @@
-let firstElem
+let firstElem;
 
 function selectFirstChild(){
     let element; 
