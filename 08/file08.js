@@ -73,7 +73,7 @@ function selectPrevNode(){
     }
     else{
         element = firstElem;
-        element = element.previousElementSibling;
+        element = element.nextElementSibling;
         element.style.color = "purple";
         element.style.backgroundColor = "black";
         firstElem = element;
