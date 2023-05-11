@@ -1,89 +1,92 @@
-let firstElem;
+let firstElement;
 
-function selectFirstChild(){
-    let element; 
-    if (firstElem){
-        firstElem = element; 
-        element = document.querySelector("#list").firstElementChild;
-        element.style.color = "red";
-        element.style.backgroundColor = "black";
-    }
-    else{
-        element = document.querySelector("#list").firstElementChild;
-        element.style.color = "red";
-        element.style.backgroundColor = "black";
-        firstElem = element;
-    }
+function selectFirstChild() {
+  let elem;
+  if (firstElement) {
+    elem = firstElement;
+    elem.style.backgroundColor = 'transparent';
+    elem = document.querySelector('#list').firstElementChild;
+    elem.style.color = 'red';
+    elem.style.backgroundColor = 'black';
+    firstElement = elem;
+  } else {
+    elem = document.querySelector('#list').firstElementChild;
+    elem.style.color = 'red';
+    elem.style.backgroundColor = 'black';
+    firstElement = elem;
+  }
 }
 
-function selectLastChild(){
-    let element; 
-    if (firstElem){
-        firstElem = element; 
-        element = document.querySelector("#list").lastElementChild;
-        element.style.color = "blue";
-        element.style.backgroundColor = "black";
-    }
-    else{
-        element = document.querySelector("#list").lastElementChild;
-        element.style.color = "blue";
-        element.style.backgroundColor = "black";
-        firstElem = element;
-    }
+function selectLastChild() {
+  let elem;
+  if (firstElement) {
+    elem = firstElement;
+    elem.style.backgroundColor = 'transparent';
+    elem = document.querySelector('#list').lastElementChild;
+    elem.style.color = 'red';
+    elem.style.backgroundColor = 'black';
+    firstElement = elem;
+  } else {
+    elem = document.querySelector('#list').lastElementChild;
+    elem.style.color = 'red';
+    elem.style.backgroundColor = 'black';
+    firstElement = elem;
+  }
 }
 
-function selectNextNode(){
-    let element; 
-    if (!firstElem){
-        element = document.querySelector("#list").firstElementChild;
-        element.style.color = "red";
-        element.style.backgroundColor = "black";
-        firstElem = element;
-    }
-    else if(element == document.querySelector("#list").lastElementChild){
-        element = firstElem;
-        element = document.querySelector("#list").firstElementChild;
-        element.style.color = "pink";
-        element.style.backgroundColor = "black";
-        firstElem = element;
-    }
-    else{
-        element = firstElem;
-        element = element.nextElementSibling;
-        element.style.color = "yellow";
-        element.style.backgroundColor = "blue";
-        firstElem = element;
-    }
+
+function selectNextNode() {
+  let elem;
+  if (!firstElement) {
+    elem = document.querySelector('#list').firstElementChild;
+    elem.style.color = 'red';
+    elem.style.backgroundColor = 'black';
+    firstElement = elem;
+  } else if (firstElement == document.querySelector('#list').lastElementChild) {
+    elem = firstElement;
+    elem.style.backgroundColor = 'transparent';
+    elem = document.querySelector('#list').firstElementChild;
+    elem.style.color = 'red';
+    elem.style.backgroundColor = 'black';
+    firstElement = elem;
+  } else {
+    elem = firstElement;
+    elem.style.backgroundColor = 'transparent';
+    elem = elem.nextElementSibling;
+    elem.style.color = 'red';
+    elem.style.backgroundColor = 'black';
+    firstElement = elem;
+  }
 }
 
-function selectPrevNode(){
-    let element; 
-    if (!firstElem){
-        element = document.querySelector("#list").lastElementChild;
-        element.style.color = "yellow";
-        element.style.backgroundColor = "blue";
-        firstElem = element;
-    }
-    else if(element == document.querySelector("#list").firstElementChild){
-        element = firstElem;
-        element = document.querySelector("#list").lastElementChild;
-        element.style.color = "red";
-        element.style.backgroundColor = "black";
-        firstElem = element;
-    }
-    else{
-        element = firstElem;
-        element = element.nextElementSibling;
-        element.style.color = "purple";
-        element.style.backgroundColor = "black";
-        firstElem = element;
-    }
+function selectPrevNode() {
+  let elem;
+  if (!firstElement) {
+    elem = document.querySelector('#list').lastElementChild;
+    elem.style.color = 'red';
+    elem.style.backgroundColor = 'black';
+    firstElement = elem;
+  } else if (firstElement == document.querySelector('#list').firstElementChild) {
+    elem = firstElement;
+    elem.style.backgroundColor = 'transparent';
+    elem = document.querySelector('#list').lastElementChild;
+    elem.style.color = 'red';
+    elem.style.backgroundColor = 'black';
+    firstElement = elem;
+  } else {
+    elem = firstElement;
+    elem.style.backgroundColor = 'transparent';
+    elem = elem.previousElementSibling;
+    elem.style.color = 'red';
+    elem.style.backgroundColor = 'black';
+    firstElement = elem;
+  }
 }
 function createNewChild() {
-    const element = document.querySelector("#list");
+    const elem = document.querySelector("#list");
     let newElement = document.createElement("li");
     newElement.innerText = "New element";
-    element.append(newElement);
+    elem.append(newElement);
 }
 
 function removeLastChild() {
@@ -91,10 +94,10 @@ function removeLastChild() {
   }
   
 function createNewChildAtStart() {
-    const element = document.querySelector("#list");
+    const elem = document.querySelector("#list");
     let newElement = document.createElement("li");
     newElement.innerText = "New element";
-    element.prepend(newElement);
+    elem.prepend(newElement);
 }
 
 
