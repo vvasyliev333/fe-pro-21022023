@@ -12,7 +12,7 @@ const seconds = () => {
     else if (sec_counter < 10 || sec_counter === 0) {
         sec_counter = `0${sec_counter}`;
     }
-    document.querySelector(".seconds").textContent = sec_counter;
+    document.querySelector(`.seconds`).textContent = sec_counter;
 }
 
 const minutes = () => {
@@ -23,7 +23,7 @@ const minutes = () => {
     else if (min_counter < 10 || min_counter === 0) {
         min_counter = `0${min_counter}`;
     }
-    document.querySelector(".minutes").textContent = min_counter;
+    document.querySelector(`.minutes`).textContent = min_counter;
 }
 
 const hours = () => {
@@ -33,7 +33,7 @@ const hours = () => {
     else if (hour_counter < 10 || hour_counter === 0) {
         hour_counter = `0${hour_counter}`;
     }
-    document.querySelector(".hours").textContent = hour_counter;
+    document.querySelector(`.hours`).textContent = hour_counter;
 }
 
 function $(switcher) {
