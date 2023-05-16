@@ -1,0 +1,43 @@
+.Container {
+    display: inline-block;
+    width: 75%;
+    height: 25%;
+}
+.Container span{
+    padding: 5px;
+    border: 2px solid black;
+    width: 50%;
+    border-radius: 2px;
+}
+.Container button{
+    border-radius: 3px;
+    background-color: transparent;
+    margin-left: 3px;
+}
+.input{
+    display: none;
+    width: 200px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px 10px;
+}
+.input::placeholder{
+    color: black;
+    padding: 10px 10px;
+}
+.correctPrice{
+    color: red;
+    padding: 10px ;
+}
+.green{
+    border: 3px solid green;
+}
+.redColour{
+    border: 3px solid red;
+}
+.changeGreen{
+    color: green;
+}
