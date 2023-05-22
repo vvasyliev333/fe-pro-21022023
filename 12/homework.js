@@ -168,8 +168,24 @@ window.onload = function () {
          div.className = "ketchup"
          div.innerHTML = "BBQ"
  
-         this.appendChild(div_2);
+         this.appendChild(div);
  
          return false;
      }, false);
 }
+
+
+$("btnSubmit").addEventListener("click", () => {
+    const patternName = /^[Є-яҐ]{2,}$/;
+    const patternTel = /^\+380\d{9}$/;
+    const patternMail = /\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}$/gi;
+    if (patternName.test($("#name").value) && patternTel.test($("#tel").value) && patternMail.test($("#mail").value)) {
+        console.log("cancel")
+        document.location = "./submit-form.html";
+    }
+    else {
+        if (!patternName.test($("#name").value)) { document.getElementById("name").classList.add("error") }
+        if (!patternTel.test($("#tel").value)) { document.getElementById("tel").classList.add("error") }
+        if (!patternMail.test($("#mail").value)) { document.getElementById("mail").classList.add("error") }
+    }
+})

@@ -403,3 +403,7 @@ footer > form > div > p {
     width: 100px;
     height: 20px;
 }
+.error{
+    background-color: red;
+}
+
