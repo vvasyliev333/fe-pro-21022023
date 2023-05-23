@@ -11,68 +11,67 @@ const price = {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-     // Шукаємо розмір коржу
-    document.getElementById("pizza")
-        .addEventListener("click", function (ev) {
-            //console.log(ev.target.id);
-             //Визначаємо обраний корж і записуємо данні в обьєкт 
-            switch (ev.target.id) {
-                case "small": pizza.size = price.size.small;
-                    break
-                case "mid": pizza.size = price.size.mid;
-                    break
-                case "big": pizza.size = price.size.big;
-                    break
-            }
-            show(pizza)
-        })
-    
-        show(pizza)
-        btnRun()
+    // Шукаємо розмір коржу
+   document.getElementById("pizza")
+       .addEventListener("click", function (ev) {
+           //console.log(ev.target.id);
+            //Визначаємо обраний корж і записуємо данні в обьєкт 
+           switch (ev.target.id) {
+               case "small": pizza.size = price.size.small;
+                   break
+               case "mid": pizza.size = price.size.mid;
+                   break
+               case "big": pizza.size = price.size.big;
+                   break
+           }
+           show(pizza)
+       })
+   
+       show(pizza)
+       btnRun()
 })
 
 //метод для виводу інформації про продукт
 function show (pizza) {
-    //отримали блок ціни
-    const price = document.querySelector("#price");
+   //отримали блок ціни
+   const price = document.querySelector("#price");
 
-    price.innerText = pizza.size
+   price.innerText = pizza.size
 }
 
 function btnRun () {
-    
-    const btn = document.querySelector("#banner");
-    
-    btn.addEventListener("mousemove", () => {
-        const coords = {
-            X : Math.floor(Math.random() * document.body.clientWidth),
-            Y : Math.floor(Math.random() * document.body.clientHeight)
-        }
-        //banner === 300px
-        //document.body.clientWidth === 1000
+   
+   const btn = document.querySelector("#banner");
+   
+   btn.addEventListener("mousemove", () => {
+       const coords = {
+           X : Math.floor(Math.random() * document.body.clientWidth),
+           Y : Math.floor(Math.random() * document.body.clientHeight)
+       }
+       //banner === 300px
+       //document.body.clientWidth === 1000
 
-        //999 + 300 = 1299
+       //999 + 300 = 1299
 
-        //if(document.body.clientWidth - 300)
-        console.log(coords.X - 300);
-        console.log(document.body.clientWidth);
-        if((coords.X + 350) > document.body.clientWidth){
-            debugger
-            return
-        }
-        if((coords.Y + 150) > document.body.clientHeight){
-            debugger
-            return
-        }
-    
-        btn.style.top = coords.Y + "px"
-        btn.style.left = coords.X + "px"
-    })
+       //if(document.body.clientWidth - 300)
+       console.log(coords.X - 300);
+       console.log(document.body.clientWidth);
+       if((coords.X + 350) > document.body.clientWidth){
+           debugger
+           return
+       }
+       if((coords.Y + 150) > document.body.clientHeight){
+           debugger
+           return
+       }
+   
+       btn.style.top = coords.Y + "px"
+       btn.style.left = coords.X + "px"
+   })
 
 }
 
 window.onload = function () {
-
     //Кетчуп 
     var source = document.getElementById("sauceClassic");
 
@@ -174,18 +173,21 @@ window.onload = function () {
      }, false);
 }
 
+$(document).ready(function(){
 
-$("btnSubmit").addEventListener("click", () => {
-    const patternName = /^[Є-яҐ]{2,}$/;
-    const patternTel = /^\+380\d{9}$/;
-    const patternMail = /\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}$/gi;
-    if (patternName.test($("#name").value) && patternTel.test($("#tel").value) && patternMail.test($("#mail").value)) {
-        console.log("cancel")
-        document.location = "./submit-form.html";
-    }
-    else {
-        if (!patternName.test($("#name").value)) { document.getElementById("name").classList.add("error") }
-        if (!patternTel.test($("#tel").value)) { document.getElementById("tel").classList.add("error") }
-        if (!patternMail.test($("#mail").value)) { document.getElementById("mail").classList.add("error") }
-    }
+    $("btnSubmit").addEventListener("click", () => {
+        const patternName = /^[Є-яҐ]{2,}$/;
+        const patternTel = /^\+380\d{9}$/;
+        const patternMail = /\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}$/gi;
+        if (patternName.test($("#name").value) && patternTel.test($("#tel").value) && patternMail.test($("#mail").value)) {
+            console.log("cancel")
+            document.location = "./submit-form.html";
+        }
+        else {
+            if (!patternName.test($("#name").value)) { document.getElementById("name").classList.add("error") }
+            if (!patternTel.test($("#tel").value)) { document.getElementById("tel").classList.add("error") }
+            if (!patternMail.test($("#mail").value)) { document.getElementById("mail").classList.add("error") }
+        }
+    })
+
 })
