@@ -24,11 +24,11 @@ const updateDisplay = () => {
 //  function calc
 function calc (sign) {
     switch(sign){
-        case '+':
-            result = first_num + second_num;
-            break;
         case '-':
             result = first_num - second_num;
+            break;
+        case '+':
+            result = (+first_num) + (+second_num);
             break;
         case '*':
             result = first_num * second_num;
@@ -144,7 +144,7 @@ buttons.addEventListener('click', (event) => {
     }
 
     // sign / + - *
-    if(btnValue === '-'|| btnValue === '+'|| btnValue === '/'|| btnValue === '*'){
+    if(btnValue === '+'|| btnValue === '-'|| btnValue === '/'|| btnValue === '*'){
         if(finish == true){
             calc(sign);
             let resPoint = String(result).split('.');

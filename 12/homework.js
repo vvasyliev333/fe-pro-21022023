@@ -138,22 +138,22 @@ window.onload = function () {
      }, false);
  
  
-     var target = document.getElementById("sauce");
+     var target_1 = document.getElementById("sauce");
  
-     target.addEventListener("dragenter", function (evt) {
+     target_1.addEventListener("dragenter", function (evt) {
          this.style.border = "3px solid red";
      }, false);
  
-     target.addEventListener("dragleave", function (evt) {
+     target_1.addEventListener("dragleave", function (evt) {
          this.style.border = "";
      }, false);
  
-     target.addEventListener("dragover", function (evt) {
+     target_1.addEventListener("dragover", function (evt) {
          if (evt.preventDefault) evt.preventDefault();
          return false;
      }, false);
  
-     target.addEventListener("drop", function (evt) {
+     target_1.addEventListener("drop", function (evt) {
  
          if (evt.preventDefault) evt.preventDefault();
          if (evt.stopPropagation) evt.stopPropagation();
@@ -171,9 +171,7 @@ window.onload = function () {
  
          return false;
      }, false);
-}
-
-$("btnSubmit").on("click", () => {
+     $("btnSubmit").on("click", () => {
     const patternName = /^[Є-яҐ]{2,}$/;
     const patternTel = /^\+380\d{9}$/;
     const patternMail = /\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}$/gi;
@@ -187,3 +185,4 @@ $("btnSubmit").on("click", () => {
         if (!patternMail.test($("#mail").value)) { document.getElementById("mail").classList.add("error") }
     }
 })
+}
