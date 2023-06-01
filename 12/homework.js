@@ -138,22 +138,22 @@ window.onload = function () {
      }, false);
  
  
-     var target_1 = document.getElementById("sauce");
+     var target_second = document.getElementById("sauce");
  
-     target_1.addEventListener("dragenter", function (evt) {
+     target_second.addEventListener("dragenter", function (evt) {
          this.style.border = "3px solid red";
      }, false);
  
-     target_1.addEventListener("dragleave", function (evt) {
+     target_second.addEventListener("dragleave", function (evt) {
          this.style.border = "";
      }, false);
  
-     target_1.addEventListener("dragover", function (evt) {
+     target_second.addEventListener("dragover", function (evt) {
          if (evt.preventDefault) evt.preventDefault();
          return false;
      }, false);
  
-     target_1.addEventListener("drop", function (evt) {
+     target_second.addEventListener("drop", function (evt) {
  
          if (evt.preventDefault) evt.preventDefault();
          if (evt.stopPropagation) evt.stopPropagation();
